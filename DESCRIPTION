@@ -10,4 +10,5 @@ Imports:
 LinkingTo: 
     Rcpp,
     Rhdf5lib
+SystemRequirements: C++17
 RoxygenNote: 7.1.2
