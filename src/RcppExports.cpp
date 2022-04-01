@@ -22,9 +22,51 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
+// write_integer_scalar
+SEXP write_integer_scalar(std::string path, std::string host, std::string name, int val);
+RcppExport SEXP _kana_parser_write_integer_scalar(SEXP pathSEXP, SEXP hostSEXP, SEXP nameSEXP, SEXP valSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::traits::input_parameter< std::string >::type path(pathSEXP);
+    Rcpp::traits::input_parameter< std::string >::type host(hostSEXP);
+    Rcpp::traits::input_parameter< std::string >::type name(nameSEXP);
+    Rcpp::traits::input_parameter< int >::type val(valSEXP);
+    rcpp_result_gen = Rcpp::wrap(write_integer_scalar(path, host, name, val));
+    return rcpp_result_gen;
+END_RCPP
+}
+// write_double_scalar
+SEXP write_double_scalar(std::string path, std::string host, std::string name, double val);
+RcppExport SEXP _kana_parser_write_double_scalar(SEXP pathSEXP, SEXP hostSEXP, SEXP nameSEXP, SEXP valSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::traits::input_parameter< std::string >::type path(pathSEXP);
+    Rcpp::traits::input_parameter< std::string >::type host(hostSEXP);
+    Rcpp::traits::input_parameter< std::string >::type name(nameSEXP);
+    Rcpp::traits::input_parameter< double >::type val(valSEXP);
+    rcpp_result_gen = Rcpp::wrap(write_double_scalar(path, host, name, val));
+    return rcpp_result_gen;
+END_RCPP
+}
+// write_string_scalar
+SEXP write_string_scalar(std::string path, std::string host, std::string name, std::string val);
+RcppExport SEXP _kana_parser_write_string_scalar(SEXP pathSEXP, SEXP hostSEXP, SEXP nameSEXP, SEXP valSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::traits::input_parameter< std::string >::type path(pathSEXP);
+    Rcpp::traits::input_parameter< std::string >::type host(hostSEXP);
+    Rcpp::traits::input_parameter< std::string >::type name(nameSEXP);
+    Rcpp::traits::input_parameter< std::string >::type val(valSEXP);
+    rcpp_result_gen = Rcpp::wrap(write_string_scalar(path, host, name, val));
+    return rcpp_result_gen;
+END_RCPP
+}
 
 static const R_CallMethodDef CallEntries[] = {
     {"_kana_parser_validate_", (DL_FUNC) &_kana_parser_validate_, 3},
+    {"_kana_parser_write_integer_scalar", (DL_FUNC) &_kana_parser_write_integer_scalar, 4},
+    {"_kana_parser_write_double_scalar", (DL_FUNC) &_kana_parser_write_double_scalar, 4},
+    {"_kana_parser_write_string_scalar", (DL_FUNC) &_kana_parser_write_string_scalar, 4},
     {NULL, NULL, 0}
 };
 

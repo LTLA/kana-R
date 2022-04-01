@@ -2,6 +2,18 @@
 # Generator token: 10BE3573-1514-4C36-9D1C-5A225CD40393
 
 validate_ <- function(path, embedded, version) {
-    .Call('_kana_parser_validate_', PACKAGE = 'kana.parser', path, embedded, version)
+    .Call(`_kana_parser_validate_`, path, embedded, version)
+}
+
+write_integer_scalar <- function(path, host, name, val) {
+    .Call(`_kana_parser_write_integer_scalar`, path, host, name, val)
+}
+
+write_double_scalar <- function(path, host, name, val) {
+    .Call(`_kana_parser_write_double_scalar`, path, host, name, val)
+}
+
+write_string_scalar <- function(path, host, name, val) {
+    .Call(`_kana_parser_write_string_scalar`, path, host, name, val)
 }
 
