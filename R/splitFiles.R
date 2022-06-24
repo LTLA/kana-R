@@ -34,7 +34,7 @@ splitFiles <- function(path, state.path = "state.h5", file.dir = "files") {
     # Can't be bothered dealing with older versions right now.
     version <- readBin(con, what=raw(), n=8) 
     full.version <- bufferToNumber(version)
-    stopifnot(floor(full.version/1e6) == 1)
+    stopifnot(floor(full.version/1e6) >= 1)
 
     nice.version <- sprintf("%s.%s.%s", 
         floor(full.version/1e6), 
